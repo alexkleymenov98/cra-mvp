@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 export const HomePage:FC = ()=>{
     const handlerReq = async ()=>{
-       await fetch('/api/v1/analytics-service/tablemeta/v_s23_n1');
+       await fetch('http://localhost:8080/api/v1/analytics-service/tablemeta/v_s23_n1');
     }
     return (
         <div>
