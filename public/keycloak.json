@@ -1,70 +1,12 @@
 {
-  "clientId": "react-auth",
-  "name": "react-auth",
-  "description": "",
-  "rootUrl": "http://localhost:3000",
-  "adminUrl": "*",
-  "baseUrl": "http://localhost:3000",
-  "surrogateAuthRequired": false,
-  "enabled": true,
-  "alwaysDisplayInConsole": false,
-  "clientAuthenticatorType": "client-secret",
-  "secret": "LppzpV0LLgAvQBxrgHa7cu8kIFuB3ETl",
-  "redirectUris": [
-    "*"
-  ],
-  "webOrigins": [
-    "*"
-  ],
-  "notBefore": 0,
-  "bearerOnly": false,
-  "consentRequired": false,
-  "standardFlowEnabled": true,
-  "implicitFlowEnabled": false,
-  "directAccessGrantsEnabled": true,
-  "serviceAccountsEnabled": false,
-  "publicClient": false,
-  "frontchannelLogout": true,
-  "protocol": "openid-connect",
-  "attributes": {
-    "access.token.lifespan": "60",
-    "client.secret.creation.time": "1666276163",
-    "login_theme": "base",
-    "post.logout.redirect.uris": "*",
-    "oauth2.device.authorization.grant.enabled": "false",
-    "backchannel.logout.revoke.offline.tokens": "false",
-    "use.refresh.tokens": "true",
-    "tls-client-certificate-bound-access-tokens": "false",
-    "oidc.ciba.grant.enabled": "false",
-    "backchannel.logout.session.required": "true",
-    "client_credentials.use_refresh_token": "false",
-    "acr.loa.map": "{}",
-    "require.pushed.authorization.requests": "false",
-    "display.on.consent.screen": "false",
-    "token.response.type.bearer.lower-case": "false"
+  "realm": "keyloak-react-auth",
+  "auth-server-url": "http://localhost:8080/",
+  "ssl-required": "external",
+  "resource": "react-auth",
+  "verify-token-audience": false,
+  "credentials": {
+    "secret": "LppzpV0LLgAvQBxrgHa7cu8kIFuB3ETl"
   },
-  "authenticationFlowBindingOverrides": {
-    "direct_grant": "aad31cb1-a562-4e4f-bca8-7f5507100c84",
-    "browser": "70e73805-4d86-448d-bf86-ca6befb36784"
-  },
-  "fullScopeAllowed": true,
-  "nodeReRegistrationTimeout": -1,
-  "defaultClientScopes": [
-    "web-origins",
-    "acr",
-    "profile",
-    "roles",
-    "email"
-  ],
-  "optionalClientScopes": [
-    "address",
-    "phone",
-    "offline_access",
-    "microprofile-jwt"
-  ],
-  "access": {
-    "view": true,
-    "configure": true,
-    "manage": true
-  }
+  "use-resource-role-mappings": true,
+  "confidential-port": 0
 }
