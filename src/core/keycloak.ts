@@ -4,10 +4,9 @@ import Keycloak from "keycloak-js";
 const keycloak = new Keycloak('/keycloak-3.json');
 
 
-export function initKeycloak(renderApp: ()=>void){
-    keycloak.init({onLoad:'login-required', enableLogging: true, }).then(function(authenticated) {
+export function initKeycloak(){
+    keycloak.init({onLoad:'check-sso', enableLogging: true, }).then(function(authenticated) {
         console.log(authenticated ? 'authenticated' : 'not authenticated');
-        authenticated && renderApp();
         // alert(authenticated ? 'authenticated' : 'not authenticated');
     }).catch(function(reason) {
         console.log(reason, 'error initial');
