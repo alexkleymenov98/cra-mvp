@@ -1,13 +1,23 @@
 import React, {FC} from 'react';
-import {Link} from "react-router-dom";
 
 export const HomePage:FC = ()=>{
-
+    // const { keycloak, initialized } = useKeycloak();
+    // const isLoggedIn = keycloak.authenticated;
+    // console.log(initialized, isLoggedIn, 'isLogged');
+    // console.log(keycloak.clientSecret, 'keycloak')
     return (
         <div>
-            <h1>HOME</h1>
-            <button>Логин</button>
-            <Link to={'/login'}>логин</Link>
+            Главная страница
+            {/*{!isLoggedIn && (*/}
+            {/*    <button onClick={()=>keycloak.login()}>*/}
+            {/*        Войти*/}
+            {/*    </button>*/}
+            {/*)}*/}
+            {/*{isLoggedIn && (*/}
+            {/*    <button onClick={()=>keycloak.logout()}>*/}
+            {/*        Выйти*/}
+            {/*    </button>*/}
+            {/*)}*/}
         </div>
     )
 };

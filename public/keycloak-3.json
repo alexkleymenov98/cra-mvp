@@ -1,0 +1,11 @@
+{
+  "realm": "keyloak-react-auth1",
+  "auth-server-url": "http://localhost:8090/auth/",
+  "ssl-required": "external",
+  "resource": "react-auth1",
+  "public-client": true,
+  "credentials": {
+    "secret": "7oJk2bsxGUeOvwT7lIylKG2fMOIkXUqJ"
+  },
+  "confidential-port": 0
+}

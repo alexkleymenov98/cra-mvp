@@ -1,25 +1,28 @@
-import React, {useState} from 'react';
+import { useKeycloak} from '@react-keycloak/web';
+import React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {HomePage} from "./pages/HomePage";
 import {LoginPage} from "./pages/LoginPage";
-import {KeycloakContext} from "./keycloak/KeycloakProvider";
-import keycloak from "./core/keycloak";
 
 function App() {
-    const [authenticated, setAuthenticated] = useState(false)
-    keycloak.init().then((auth)=>{
-        setAuthenticated(auth);
-    })
 
+    const {keycloak, initialized} = useKeycloak();
   return (
-      <KeycloakContext.Provider value={{keycloak, authenticated}}>
-          <BrowserRouter>
-              <Routes>
-                  <Route index element={<HomePage />} />
-                  <Route path="/login" element={<LoginPage />}/>
-              </Routes>
-          </BrowserRouter>
-      </KeycloakContext.Provider>
+      <div>
+          {initialized && (
+              <div>
+                  <h1>auth: {`${keycloak.authenticated}`}</h1>
+                  {!keycloak.authenticated && <button onClick={()=>keycloak.login()}>Войти</button>}
+                  {keycloak.authenticated && <button onClick={()=>keycloak.logout()}>Выйти</button>}
+              </div>
+          )}
+              <BrowserRouter>
+                  <Routes>
+                      <Route index element={<HomePage />} />
+                      <Route path="/login" element={<LoginPage />}/>
+                  </Routes>
+              </BrowserRouter>
+      </div>
   );
 }
 
